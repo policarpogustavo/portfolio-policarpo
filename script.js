@@ -5,12 +5,10 @@ const menu = document.querySelector(".nav");
 
 botaoMenu.addEventListener("click", () => {
     menu.classList.toggle("ativo");
+    botaoMenu.classList.toggle("aberto");
 
-    if (menu.classList.contains("ativo")) {
-        botaoMenu.textContent = "✕";
-    } else {
-        botaoMenu.textContent = "☰";
-    }
+    const aberto = menu.classList.contains("ativo");
+    botaoMenu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
 });
 
 
@@ -21,7 +19,8 @@ const linksMenu = document.querySelectorAll(".nav a");
 linksMenu.forEach((link) => {
     link.addEventListener("click", () => {
         menu.classList.remove("ativo");
-        botaoMenu.textContent = "☰";
+        botaoMenu.classList.remove("aberto");
+        botaoMenu.setAttribute("aria-label", "Abrir menu");
     });
 });
 
