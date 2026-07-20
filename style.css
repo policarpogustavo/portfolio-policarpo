@@ -227,6 +227,20 @@ font-weight: bold;
     transform: translateY(-4px);
 }
 
+.confianca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 26px;
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.confianca span {
+    font-size: 14px;
+    color: #aeb0bd;
+}
+
 /* FOTO ARRUMADA */
 
 .inicio-foto {
@@ -419,6 +433,106 @@ font-weight: bold;
 
 .card p {
     color: #aeb0bd;
+}
+
+/* COMO FUNCIONA */
+
+.processo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.processo-passo {
+    padding: 30px 26px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.processo-passo:hover {
+    transform: translateY(-7px);
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.processo-numero {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #9333ea, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: 12px;
+}
+
+.processo-passo h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.processo-passo p {
+    color: #aeb0bd;
+    font-size: 15px;
+}
+
+/* FAQ */
+
+.faq-lista {
+    max-width: 850px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    padding: 22px 26px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    list-style: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    font-size: 24px;
+    color: #8b5cf6;
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    color: #aeb0bd;
+    margin-top: 14px;
+    font-size: 15px;
 }
 
 /* PROJETOS */
@@ -650,6 +764,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .processo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .projeto-card {
         grid-template-columns: 1fr;
     }
@@ -657,6 +775,10 @@ footer {
     .disponivel {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .confianca {
+        justify-content: center;
     }
 }
 
@@ -724,8 +846,13 @@ footer {
     }
 
     .tecnologias-grid,
-    .servicos-grid {
+    .servicos-grid,
+    .processo-grid {
         grid-template-columns: 1fr;
+    }
+
+    .faq-item {
+        padding: 18px 20px;
     }
 
     .projeto-imagem {
